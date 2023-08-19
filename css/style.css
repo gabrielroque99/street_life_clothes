@@ -9,13 +9,14 @@ header{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    background-color: black;
     background-image:url("../assets/images/fondo.jpg.jpg");
     background-size:cover;
     background-position:center right;
     background-repeat:no-repeat;
     width: 100%;
     height: 150px;
-    font-size: 1.875rem;
+    font-size: 1.25rem;
 }
 header h1{
     font-family: 'Roboto', sans-serif;
@@ -36,6 +37,15 @@ header h1{
 }
 main{
     background-color: rgb(222, 161, 233);
+}
+.flexm{
+    background-color: rgb(222, 161, 233);
+    box-shadow: 2px 2px 5px black;
+    display: flex;
+    border-radius: .625rem;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 .buzos{
     background-color:rgb(222, 161, 233);
@@ -238,11 +248,15 @@ main{
     justify-content: center;
     text-align: center;
     gap: .625rem;
-}
-footer{
+} 
+.flexf{
     background-color: rgb(222, 161, 233);
     box-shadow: 2px 2px 5px black;
+    display: flex;
     border-radius: .625rem;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 .Contacto{
     font-family: 'Roboto', sans-serif;
@@ -277,7 +291,105 @@ form{
 }
 .about{
     background-color: rgb(222, 161, 233);
+    background-image: url(https://images.unsplash.com/photo-1652272789122-784f8192df89?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1370&q=80);
+    display: flex;
+    gap: 1.25rem;
+    color: rgb(248, 228, 237) ;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-size:cover;
+    background-position:center right;
+    background-repeat:no-repeat;
+    width: 100%;
+    height: 100%;
     font-family: 'Roboto', sans-serif;
     text-align: center;
     font-size: 16px;
+} 
+.galeria{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: (3,1fr) ;
+    grid-template-rows: (3,1fr);
+    grid-template-areas:
+    "div1 div2 div3"
+    "div1 div2 div3"
+    "div1 div2 div3"
+    ;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    ;
 }
+.galeria div{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.galeria div img{
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+.div1{
+    grid-area: div1;
+    text-align: center;
+    order:1;
+}
+.div2{
+    grid-area: div2;
+    text-align: center;
+    order:2;
+}
+.div3{
+    grid-area: div3;
+    text-align: center;
+    order:3;
+    object-fit: contain;
+}
+@media (max-width:768px){
+    header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 15px;
+        height: 50%;
+        
+    }
+    .navbar{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: .3125rem;
+    }
+    .galeria{
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: repeat(3,1fr);
+        grid-template-areas:
+        "div1"
+        "div2"
+        "div3";
+        justify-content: center;
+        align-items: center;
+        gap: 1.25rem;
+    }
+    .galeria div{
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .galeria div img{
+        width: 80%;
+        height: 250px;
+        object-fit: contain;
+    }
+}
+
